@@ -658,6 +658,61 @@ SoloLearn/
 Где в SoloLearn обязательно должны быть файлы LICENSE.txt, README.txt, setup.py (exe), а в sololearn __init__.py
 """
 
+# Стеки
+# Работают по принципу Firs in, Last out (FILO). Используются, как пример, в буфере обмена.
+
+class Stack:
+    def __init__(self): # Инициализация стэка (списка).
+        self.items = []  
+  
+    def is_empty(self): # Если стэк пустой.
+        return self.items == []
+  
+    def push(self, item): # Добавление элемента в стэк.
+        self.items.insert(0, item)
+    
+    def pop(self): # Удаление элемента из стэка.
+        return self.items.pop(0)
+    
+    def print_stack(self): # Вывод стэка.
+        print(self.items)
+    
+s = Stack()
+s.push('a')
+s.push('b')
+s.push('c')
+s.print_stack()
+
+s.pop()
+s.print_stack()
+
+# Очереди
+# Работают по принципу Firs in, First out (FIFO). Используются, как пример, в колл-центре.
+
+class Queue:
+    def __init__(self): # Объявление очереди.
+        self.items = []
+
+    def is_empty(self): # Возврат пустой очереди.
+        return self.items == []
+
+    def enqueue(self, item): # Добавление нового элемента.
+        self.items.insert(0, item)
+ 
+    def dequeue(self): # Удаление элемента.
+        return self.items.pop()
+
+    def print_queue(self): # Вывод очереди.
+        print(self.items)
+
+q = Queue()
+q.enqueue('a')
+q.enqueue('b')
+q.enqueue('42')
+q.print_queue()
+
+q.dequeue()
+q.print_queue()
 
 ###################################################################################################################################
 
